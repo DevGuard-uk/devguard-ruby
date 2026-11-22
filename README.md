@@ -41,7 +41,8 @@ Create an initializer at `config/initializers/devguard.rb`:
 ```ruby
 DevGuard.configure do |config|
   config.project_id        = ENV["DEVGUARD_PROJECT_ID"]
-  config.api_key           = ENV["DEVGUARD_API_KEY"]
+  # Prefer project SDK key (Portal → Project SDK key). Falls back to DEVGUARD_API_KEY.
+  config.sdk_key           = ENV["DEVGUARD_SDK_KEY"]
   config.allowed_domains   = ["example.com", "*.example.com"]
   config.fail_safe         = :open # :open or :closed
   config.timeout_seconds   = 2.5

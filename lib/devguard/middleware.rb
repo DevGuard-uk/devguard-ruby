@@ -69,7 +69,7 @@ module DevGuard
     end
 
     def api_key
-      @options[:api_key] || config.api_key
+      @options[:sdk_key] || @options[:api_key] || config.sdk_key || config.api_key
     end
 
     def api_url

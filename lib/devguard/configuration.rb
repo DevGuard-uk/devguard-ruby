@@ -13,6 +13,7 @@ module DevGuard
     ].freeze
 
     attr_accessor :project_id,
+                  :sdk_key,
                   :api_key,
                   :api_url,
                   :fail_safe,
@@ -24,6 +25,7 @@ module DevGuard
 
     def initialize
       @project_id = nil
+      @sdk_key = nil
       @api_key = nil
       @api_url = DEFAULT_API_URL
       @fail_safe = :open
